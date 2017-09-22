@@ -3,21 +3,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.github.sleroy.io</groupId>
+  <groupId>org.sonar.plugin.eslint</groupId>
   <artifactId>sonar-eslint-plugin</artifactId>
   <packaging>sonar-plugin</packaging>
-  <version>0.1.1-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
 
   <name>ESLint</name>
   <description>Analyse ESLint projects</description>
-  <inceptionYear>2013</inceptionYear>
-  <url>https://github.com/sleroy/SonarTsPlugin</url>
-  
+  <inceptionYear>2017</inceptionYear>
+  <url>https://github.com/rochejul/SonarEsLintPlugin</url>
+
   <organisation>
-    <name>Sylvain Leroy, Paul O'Neill (pablissimo) and contributors</name>
-    <url>https://github.com/sleroy/SonarTsPlugin</url>
+    <name>Julien Roche, Sylvain Leroy (sleroy), Paul O'Neill (pablissimo) and contributors</name>
+    <url>https://github.com/rochejul/SonarEsLintPlugin</url>
   </organisation>
-  
+
   <developers>
     <developer>
       <id>pablissimo</id>
@@ -29,26 +29,30 @@
       <name>Sylvain Leroy</name>
       <url>http://www.sylvainleroy.fr</url>
     </developer>
+      <developer>
+          <id>rochejul</id>
+          <name>Julien roche</name>
+      </developer>
   </developers>
 
   <scm>
-    <connection>scm:git:git@github.com:sleroy/SonarTsPlugin.git</connection>
-    <developerConnection>scm:git:git@github.com:sleroy/SonarTsPlugin.git</developerConnection>
-    <url>https://github.com/sleroy/SonarTsPlugin</url>
+    <connection>scm:git:git@github.com:rochejul/SonarEsLintPlugin.git</connection>
+    <developerConnection>scm:git:git@github.com:rochejul/SonarEsLintPlugin.git</developerConnection>
+    <url>https://github.com/rochejul/SonarEsLintPlugin</url>
     <tag>1.0</tag>
   </scm>
   <issueManagement>
     <system>Github</system>
-    <url>https://github.com/sleroy/SonarTsPlugin/issues</url>
+    <url>https://github.com/rochejul/SonarEsLintPlugin/issues</url>
   </issueManagement>
   <ciManagement>
     <system>Travis</system>
-    <url>https://travis-ci.org/sleroy/SonarTsPlugin</url>
+    <url>https://travis-ci.org/rochejul/SonarEsLintPlugin</url>
   </ciManagement>
-  
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    
+
     <sonar.buildVersion>5.6.5</sonar.buildVersion>
     <jdk.min.version>1.8</jdk.min.version>
     <sslr.version>1.21</sslr.version>
@@ -141,7 +145,7 @@
             </includes>
         </testResource>
     </testResources>
-    
+
     <plugins>
       <plugin>
         <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
@@ -150,7 +154,7 @@
         <extensions>true</extensions>
         <configuration>
           <pluginKey>eslint-plugin</pluginKey>
-          <pluginClass>io.github.sleroy.sonar.EsLintPlugin</pluginClass>
+          <pluginClass>org.sonar.plugin.eslint.EsLintPlugin</pluginClass>
         </configuration>
       </plugin>
       <plugin>
@@ -160,7 +164,7 @@
         <configuration>
           <source>${jdk.min.version}</source>
           <target>${jdk.min.version}</target>
-          
+
           <showDeprecation>true</showDeprecation>
           <compilerArgs>
             <arg>-Xlint:all</arg>

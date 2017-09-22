@@ -3,12 +3,10 @@ SonarEsLintPlugin
 
 SonarQube plugin for EsLint linter and its extensions. The code is based on the TypeScript plugin published by Pablissimo. [https://github.com/Pablissimo/SonarEsLintPlugin](https://github.com/Pablissimo/SonarEsLintPlugin)
 
-Download [https://github.com/sleroy/SonarEsLintPlugin/releases/download/v0.1.1/sonar-eslint-plugin-0.1.1.jar](the plugin)
-
 Basically this plugin launches EsLint and colelcts its results into SonarQube. It may be slower than the own SonarQube javascript parser that I recommend to use for most usages. However if you are interested by AngularJS coding rules, uses my plugin :-)
 
-[![Build Status](https://travis-ci.org/sleroy/SonarEsLintPlugin.svg?branch=master)](https://travis-ci.org/sleroy/SonarEsLintPlugin)
-[![Coverage Status](https://coveralls.io/repos/github/sleroy/SonarEsLintPlugin/badge.svg?branch=master)](https://coveralls.io/github/sleroy/SonarEsLintPlugin?branch=master)
+[![Build Status](https://travis-ci.org/rochejul/SonarEsLintPlugin.svg?branch=master)](https://travis-ci.org/rochejul/SonarEsLintPlugin)
+[![Coverage Status](https://coveralls.io/repos/github/rochejul/SonarEsLintPlugin/badge.svg?branch=master)](https://coveralls.io/github/rochejul/SonarEsLintPlugin?branch=master)
 
 
 ##Overview
@@ -30,7 +28,7 @@ It's presented only for the interested, and the brave.
 * Install Node.js
 * Install EsLint (3+) with `npm install -g eslint`, or ensure it is installed locally against your project
   * If you're installing globally, find the path to EsLint and copy it - will be similar to ```C:\Users\\[Username]\AppData\Roaming\npm\node_modules\eslint\bin\eslint.js``` on Windows
-* Copy .jar file (from ```target/``` after build, or downloaded from [Releases page](https://github.com/sleroy/SonarEsLintPlugin/releases)) to SonarQube extensions folder
+* Copy .jar file (from ```target/``` after build, or downloaded from [Releases page](https://github.com/rochejul/SonarEsLintPlugin/releases)) to SonarQube extensions folder
 * Restart SonarQube server
 * Browse to SonarQube web interface, login as Admin, hit up Settings
 * Hit the Rules tab, then the EsLint rule set, then apply it to your project - alter rule activation as required
@@ -79,7 +77,7 @@ sonar.eslint.eslintconfigpath=eslint.json
 ```
 - See the [Analysis Parameters](http://docs.sonarqube.org/display/SONAR/Analysis+Parameters) documentation page for general configuration options.
 - See the [Narrowing the Focus](http://docs.sonarqube.org/display/SONAR/Narrowing+the+Focus) documentation page for configuration options related to which files to include.
-- See the rest of this README for the SonarEsLintPlugin specific configuration options. 
+- See the rest of this README for the SonarEsLintPlugin specific configuration options.
 
 ###Global configuration options
 
@@ -133,13 +131,14 @@ a configuration for that rule in SonarEsLintPlugin could look as follows:
 * For documentation about the `technical debt` parameters look [here](http://docs.sonarqube.org/display/PLUG/Rule+Remediation+Costs) and [here](http://javadocs.sonarsource.org/5.2/apidocs/org/sonar/api/server/debt/DebtRemediationFunction.html)
 * For possible values for `debtType` go [here](http://javadocs.sonarsource.org/5.2/apidocs/org/sonar/api/server/rule/RulesDefinition.SubCharacteristics.html)
 
-##Licence
+## Licence
 MIT
 
-##Building
+## Building
 * Download the source
 * Build with maven, *mvn clean && mvn install*
 
-##Contributors
+## Contributors
 Thanks to the following for contributions to the plugin:
 * [Paul O'Neill](https://github.com/Pablissimo) For the original plugin for typescript
+* [Sylvain Leroy](https://github.com/sleroy/SonarEsLintPlugin) For the original plugin for eslint
