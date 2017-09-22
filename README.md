@@ -8,7 +8,7 @@ Basically this plugin launches EsLint and colelcts its results into SonarQube. I
 [![Build Status](https://travis-ci.org/rochejul/SonarEsLintPlugin.svg?branch=master)](https://travis-ci.org/rochejul/SonarEsLintPlugin)
 
 
-##Overview
+## Overview
 
 This is plugin for SonarQube 5.6+ for analysing projects with Javascript content that supports:
 * EsLint for code quality information
@@ -18,12 +18,14 @@ This is plugin for SonarQube 5.6+ for analysing projects with Javascript content
 
 It's presented only for the interested, and the brave.
 
-##Requirements
+## Requirements
+
 * Java 1.8+
 * SonarQube 5.6 LTS+
 * EsLint 3+ (Tested on 3.14)
 
-##Installation
+## Installation
+
 * Install Node.js
 * Install EsLint (3+) with `npm install -g eslint`, or ensure it is installed locally against your project
   * If you're installing globally, find the path to EsLint and copy it - will be similar to ```C:\Users\\[Username]\AppData\Roaming\npm\node_modules\eslint\bin\eslint.js``` on Windows
@@ -41,7 +43,8 @@ Optional steps :
 * EsLint rule breaches should be shown in the web view
 
 
-##EsLint installation and configuration
+## EsLint installation and configuration
+
 By default, SonarEsLintPlugin will look for a version of EsLint installed locally within your project (i.e. in node_modules\eslint\bin), relative to the sonar-project.properties file. This may not be what you want, so you can set this directly via the ```sonar.ts.eslintpath``` configuration setting:
 * At project level
 * Globally, for all projects
@@ -58,9 +61,10 @@ Here an configuration example for .eslintrc.json
 }
 ```
 
-##Configuration
+## Configuration
 
-###Example project configuration
+### Example project configuration
+
 This is an example of what a project configuration file (`sonar-project.properties`) could look like:
 ```
 sonar.projectKey=company:my-application
@@ -78,7 +82,7 @@ sonar.eslint.eslintconfigpath=eslint.json
 - See the [Narrowing the Focus](http://docs.sonarqube.org/display/SONAR/Narrowing+the+Focus) documentation page for configuration options related to which files to include.
 - See the rest of this README for the SonarEsLintPlugin specific configuration options.
 
-###Global configuration options
+### Global configuration options
 
 <table>
 <thead>
@@ -89,7 +93,7 @@ sonar.eslint.eslintconfigpath=eslint.json
 </tbody>
 </table>
 
-###Project-level configuration options
+### Project-level configuration options
 
 <table>
 <thead>
@@ -131,13 +135,16 @@ a configuration for that rule in SonarEsLintPlugin could look as follows:
 * For possible values for `debtType` go [here](http://javadocs.sonarsource.org/5.2/apidocs/org/sonar/api/server/rule/RulesDefinition.SubCharacteristics.html)
 
 ## Licence
+
 MIT
 
 ## Building
+
 * Download the source
 * Build with maven, *mvn clean && mvn install*
 
 ## Contributors
+
 Thanks to the following for contributions to the plugin:
 * [Paul O'Neill](https://github.com/Pablissimo) For the original plugin for typescript
 * [Sylvain Leroy](https://github.com/sleroy/SonarEsLintPlugin) For the original plugin for eslint
