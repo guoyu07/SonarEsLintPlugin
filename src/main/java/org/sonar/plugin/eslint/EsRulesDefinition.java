@@ -78,7 +78,16 @@ public class EsRulesDefinition implements RulesDefinition {
             String ruleId = propKey;
             String ruleName = properties.getProperty(propKey + ".name", ruleId.replace("-", " "));
             String ruleSeverity = properties.getProperty(propKey + ".severity", EsRulesDefinition.DEFAULT_RULE_SEVERITY);
-            String ruleDescription = properties.getProperty(propKey + ".description", EsRulesDefinition.DEFAULT_RULE_DESCRIPTION);
+            String defaultRuleDescriptionValue = EsRulesDefinition.DEFAULT_RULE_DESCRIPTION;
+
+            if (ruleId.indexOf("/") < 0) {
+                defaultRuleDescriptionValue = "See full Eslint rule description on the following link: https://eslint.org/docs/rules/" + ruleId;
+
+            } else if (ruleId.indexOf("angular/") == 0) {
+                defaultRuleDescriptionValue = "See full Eslint angular rule description on the following link: https://github.com/Gillespie59/eslint-plugin-angular/blob/master/docs/rules/" + ruleId.substring(8);
+            }
+
+            String ruleDescription = properties.getProperty(propKey + ".description", defaultRuleDescriptionValue);
 
             String debtRemediationFunction = properties.getProperty(propKey + ".debtFunc", null);
             String debtRemediationScalar = properties.getProperty(propKey + ".debtScalar", EsRulesDefinition.DEFAULT_RULE_DEBT_SCALAR);
