@@ -113,7 +113,7 @@ public class EsLintSensor implements Sensor {
             for (EsLintIssue issue : batchIssues) {
                 // Make sure the rule we're violating is one we recognise - if not, we'll
                 // fall back to the generic 'eslint-issue' rule
-                String ruleName = issue.getRuleId().replace('/', '-');
+                String ruleName = issue.getRuleId();
                 if (!ruleNames.contains(ruleName)) {
                     LOG.trace("Rule {} has not yet being defined into the EsLint plugin", ruleName);
                     ruleName = EsRulesDefinition.ESLINT_UNKNOWN_RULE.getKey();
