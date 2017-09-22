@@ -6,7 +6,6 @@ SonarQube plugin for EsLint linter and its extensions. The code is based on the 
 Basically this plugin launches EsLint and colelcts its results into SonarQube. It may be slower than the own SonarQube javascript parser that I recommend to use for most usages. However if you are interested by AngularJS coding rules, uses my plugin :-)
 
 [![Build Status](https://travis-ci.org/rochejul/SonarEsLintPlugin.svg?branch=master)](https://travis-ci.org/rochejul/SonarEsLintPlugin)
-[![Coverage Status](https://coveralls.io/repos/github/rochejul/SonarEsLintPlugin/badge.svg?branch=master)](https://coveralls.io/github/rochejul/SonarEsLintPlugin?branch=master)
 
 
 ##Overview
