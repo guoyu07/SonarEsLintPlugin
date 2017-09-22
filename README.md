@@ -47,7 +47,7 @@ Optional steps :
 
 By default, SonarEsLintPlugin will look for a version of EsLint installed locally within your project (i.e. in node_modules\eslint\bin), relative to the sonar-project.properties file. This may not be what you want, so you can set this directly via the ```sonar.ts.eslintpath``` configuration setting:
 * At project level
-* Globally, for all projects
+* Globally, for all projects (if enable. Per default: false)
 
 If analysis is failing, run ```sonar-runner``` with the ```-X -e``` options for more diagnostic information, including a note of where the plugin is searching for ```eslint```. Bear in mind that if running on a build server, the account running the build will need access to the path to ```eslint```.
 
@@ -75,6 +75,7 @@ sonar.sources=src/app
 sonar.exclusions=**/node_modules/**,**/*.spec.ts
 sonar.tests=src/app
 sonar.test.inclusions=**/*.spec.ts
+sonar.eslint.eslintenabled=true
 sonar.eslint.eslintconfigpath=eslint.json
 
 ```
@@ -100,6 +101,7 @@ sonar.eslint.eslintconfigpath=eslint.json
 <tr><th>Key</th><th></th><th>Description</th>
 </thead>
 <tbody>
+<tr><td>sonar.eslint.eslintenabled</td><td><b>Recommended</b></td><td>Allow to enable the Eslint analysis on this project</td></tr>
 <tr><td>sonar.eslint.eslintpath</td><td><b>Recommended</b></td><td>Path to the installed copy of EsLint to use - see note below</td></tr>
 <tr><td>sonar.eslint.eslintconfigpath</td><td><b>Recommended</b></td><td>Path to the eslint.json file that configures the rules to be used in linting - see note below</td></tr>
 <tr><td>sonar.eslint.excludetypedefinitionfiles</td><td><b>Optional</b></td><td>Excludes .d.ts files from analysis, defaults to true</td></tr>
