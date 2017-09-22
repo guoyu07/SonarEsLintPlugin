@@ -13,7 +13,7 @@ import org.sonar.api.PropertyType;
         @Property(
                 key = EsLintPlugin.SETTING_ES_LINT_ENABLED,
                 type = PropertyType.BOOLEAN,
-                defaultValue = "true",
+                defaultValue = "false",
                 name = "Enable ESLint",
                 description = "Run ESLint on SonarQube analysis",
                 project = true
